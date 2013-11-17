@@ -8,7 +8,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'secretsanta'
+    gem 'secret_santa'
 
 And then execute:
 
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install secretsanta
+    $ gem install secret_santa
 
 ## Usage
 

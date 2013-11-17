@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'secretsanta/version'
+require 'secret_santa/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "secretsanta"
-  spec.version       = Secretsanta::VERSION
+  spec.name          = "secret_santa"
+  spec.version       = SecretSanta::VERSION
   spec.authors       = ["Kevin McPhillips"]
   spec.email         = ["github@kevinmcphillips.ca"]
   spec.description   = %q{Secret Santa}
   spec.summary       = %q{Random selection of gift givers/givees in Ruby. Supports exception lists, emails, backups to file, and more.
 }
-  spec.homepage      = "http://github.com/kmcphillips/secretsanta"
+  spec.homepage      = "http://github.com/kmcphillips/secret_santa"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
