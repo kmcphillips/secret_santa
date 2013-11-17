@@ -6,7 +6,8 @@ module SecretSanta::Concern
     end
 
     def people
-      @people ||= []
+      @people ||= Set.new
+      @people.to_a
     end
 
     def add_person(person)

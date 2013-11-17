@@ -1,5 +1,6 @@
 require 'active_support/concern'
 require 'active_support/core_ext'
+require 'set'
 
 require 'secret_santa'
 require 'secret_santa/version'

@@ -23,6 +23,13 @@ describe SecretSanta::Exchange do
       exchange << person
       expect(exchange.people).to eq([person])
     end
+
+    it "should not add a duplicate person" do
+      expect(exchange.people).to eq([])
+      exchange.add_person(person)
+      exchange.add_person(person)
+      expect(exchange.people).to eq([person])
+    end
   end
 
   describe "#matched?" do
