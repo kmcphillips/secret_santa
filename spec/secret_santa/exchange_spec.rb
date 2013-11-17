@@ -50,4 +50,10 @@ describe SecretSanta::Exchange do
     end
 
   end
+
+  describe "#to_hash" do
+    it "should be tested" do
+      pending
+    end
+  end
 end

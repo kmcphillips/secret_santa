@@ -6,7 +6,7 @@ module SecretSanta::Concern
     end
 
     def people
-      @people ||= Set.new
+      @people ||= Set.new # TODO: Refactor up when activemodel stuff is fixed
       @people.to_a
     end
 
@@ -22,6 +22,13 @@ module SecretSanta::Concern
     def match!
       raise SecretSanta::MatchingError, "Match has already been completed." if matched?
 
+    end
+
+    def to_hash
+      {
+        title: title,
+        matched_at: matched_at
+      }
     end
 
     module ClassMethods
