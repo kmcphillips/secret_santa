@@ -13,4 +13,12 @@ describe SecretSanta::Exchange do
       expect(exchange.matched?).to be_false
     end
   end
+
+  describe "#match!" do
+    it "should raise if it has already matched" do
+      expect(exchange).to receive(:matched?).and_return(true)
+      expect(->{ exchange.match! }).to raise_error(SecretSanta::MatchingError)
+    end
+
+  end
 end

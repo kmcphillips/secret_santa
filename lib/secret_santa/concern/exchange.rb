@@ -9,6 +9,11 @@ module SecretSanta::Concern
       !!matched_at
     end
 
+    def match!
+      raise SecretSanta::MatchingError, "Match has already been completed." if matched?
+      
+    end
+
     module ClassMethods
     end
   end
