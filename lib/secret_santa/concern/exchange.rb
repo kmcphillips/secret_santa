@@ -5,13 +5,22 @@ module SecretSanta::Concern
     included do
     end
 
+    def people
+      @people ||= []
+    end
+
+    def add_person(person)
+      @people << person
+    end
+    alias_method :<<, :add_person
+
     def matched?
       !!matched_at
     end
 
     def match!
       raise SecretSanta::MatchingError, "Match has already been completed." if matched?
-      
+
     end
 
     module ClassMethods
