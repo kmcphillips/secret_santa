@@ -8,6 +8,16 @@ describe SecretSanta::Person do
     p
   end
 
+  describe "#add_exception" do
+    it "should add the exception to the collection" do
+      pending
+      expect(person.exceptions.length).to be_zero
+      person.add_exception double
+      person.add_exception "Princess Bubblegum"
+      expect(person.exceptions.length).to eq(2)
+    end
+  end
+
   describe "#to_hash" do
     let(:person){ SecretSanta::Person.new(name: name, email: email, id: id, recipient: recipient) }
     let(:name){ "Fin T. Human" }

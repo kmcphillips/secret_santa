@@ -3,6 +3,12 @@ module SecretSanta::Concern
     extend ActiveSupport::Concern
 
     included do
+      attr_reader :exceptions
+    end
+
+    def add_exception(exception)
+      @exceptions ||= [] # TODO refactor up to initialize
+      @exceptions << exception
     end
 
     def to_hash
