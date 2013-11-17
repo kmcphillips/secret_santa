@@ -5,6 +5,10 @@ module SecretSanta::Concern
     included do
     end
 
+    def matched?
+      !!matched_at
+    end
+
     module ClassMethods
     end
   end
