@@ -1,4 +1,28 @@
-secretsanta
-===========
+# Secret Santa
 
-Random selection of gift givers/givees in Ruby. Supports exception lists, emails, backups to file, and more.
+TODO: Write a gem description
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'secretsanta'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install secretsanta
+
+## Usage
+
+TODO: Write usage instructions here
+
+## Contributing
+
+Please do!
+
+## Credits
+
