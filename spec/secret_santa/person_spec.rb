@@ -2,8 +2,11 @@ require "spec_helper"
 
 describe SecretSanta::Person do
   let(:exchange){ SecretSanta::Exchange.new }
+  let(:name){ "Fin T. Human" }
+  let(:email){ "fin@ooonet.com" }
+  let(:id){ 123 }
   let(:person) do
-    p = SecretSanta::Person.new
+    p = SecretSanta::Person.new(name: name, email: email, id: id)
     exchange.add_person p
     p
   end
@@ -18,17 +21,17 @@ describe SecretSanta::Person do
   end
 
   describe "#ids" do
-    it "should be tested" do
-      pending
+    it "should return the set of id, email, and name all #to_s-ed" do
+      expect(person.ids.sort).to eq([name, email, id.to_s].sort)
     end
   end
 
   describe "#to_hash" do
-    let(:person){ SecretSanta::Person.new(name: name, email: email, id: id, recipient: recipient) }
-    let(:name){ "Fin T. Human" }
-    let(:email){ "fin@ooonet.com" }
-    let(:id){ 123 }
     let(:recipient){ {name: "Jake T. Dog"} }
+
+    before(:each) do
+      person.recipient = recipient
+    end
 
     it "should serialize the object to a hash" do
       expect(person.to_hash).to eq(name: name, email: email, id: id, recipient: recipient.inspect)

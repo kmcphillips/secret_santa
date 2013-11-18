@@ -23,7 +23,7 @@ module SecretSanta::Concern
     end
 
     def ids
-      # TODO
+      [name, id, email].map(&:to_s)
     end
 
     module ClassMethods
