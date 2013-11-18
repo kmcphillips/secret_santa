@@ -24,6 +24,10 @@ describe SecretSanta::Person do
     it "should return the set of id, email, and name all #to_s-ed" do
       expect(person.ids.sort).to eq([name, email, id.to_s].sort)
     end
+
+    it "should not include blank values" do
+      expect(SecretSanta::Person.new(email: "", id: nil).ids).to eq([])
+    end
   end
 
   describe "#to_hash" do

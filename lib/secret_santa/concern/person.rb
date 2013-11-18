@@ -23,7 +23,7 @@ module SecretSanta::Concern
     end
 
     def ids
-      [name, id, email].map(&:to_s)
+      [name, id, email].map(&:to_s).reject(&:blank?)
     end
 
     module ClassMethods
