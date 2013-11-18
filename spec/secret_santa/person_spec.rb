@@ -20,7 +20,7 @@ describe SecretSanta::Person do
   describe "#to_hash" do
     let(:person){ SecretSanta::Person.new(name: name, email: email, id: id, recipient: recipient) }
     let(:name){ "Fin T. Human" }
-    let(:email){ "fin@oonet.com" }
+    let(:email){ "fin@ooonet.com" }
     let(:id){ 123 }
     let(:recipient){ {name: "Jake T. Dog"} }
 

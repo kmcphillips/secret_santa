@@ -14,13 +14,17 @@ module SecretSanta::Concern
     end
     alias_method :<<, :add_person
 
+    def add_exception(person_id, exception_id)
+      # TODO
+    end
+
     def matched?
       !!matched_at
     end
 
     def match!
       raise SecretSanta::MatchingError, "Match has already been completed." if matched?
-
+      # TODO
     end
 
     def to_hash

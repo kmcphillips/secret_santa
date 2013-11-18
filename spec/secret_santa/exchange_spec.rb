@@ -32,6 +32,12 @@ describe SecretSanta::Exchange do
     end
   end
 
+  describe "#add_exception" do
+    it "should be tested" do
+      pending
+    end
+  end
+
   describe "#matched?" do
     it "should check the :matched_at column for true" do
       exchange.matched_at = Time.now
