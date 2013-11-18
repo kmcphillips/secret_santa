@@ -15,7 +15,7 @@ module SecretSanta::Concern
     alias_method :<<, :add_person
 
     def add_exception(person_id, exception_id)
-      # TODO
+      find_person!(person_id).add_exception(find_person!(exception_id))
     end
 
     def matched?

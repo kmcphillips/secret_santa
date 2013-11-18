@@ -32,8 +32,16 @@ describe SecretSanta::Exchange do
   end
 
   describe "#add_exception" do
-    it "should be tested" do
-      pending
+    let(:person){ double }
+    let(:exception){ double }
+    let(:person_id){ "p" }
+    let(:exception_id){ "e" }
+
+    it "should add the exception to the person" do
+      expect(exchange).to receive(:find_person!).with(person_id).and_return(person)
+      expect(exchange).to receive(:find_person!).with(exception_id).and_return(exception)
+      expect(person).to receive(:add_exception).with(exception).and_return(true)
+      expect(exchange.add_exception(person_id, exception_id)).to be_true
     end
   end
 
