@@ -13,22 +13,22 @@ describe SecretSanta::Exchange do
     let(:person){ double }
 
     it "should append the passed in object to the collection" do
-      expect(exchange.people).to eq([])
+      expect(exchange.people.to_a).to eq([])
       exchange.add_person(person)
-      expect(exchange.people).to eq([person])
+      expect(exchange.people.to_a).to eq([person])
     end
 
     it "should alias to :<< on the exchange instance" do
-      expect(exchange.people).to eq([])
+      expect(exchange.people.to_a).to eq([])
       exchange << person
-      expect(exchange.people).to eq([person])
+      expect(exchange.people.to_a).to eq([person])
     end
 
     it "should not add a duplicate person" do
-      expect(exchange.people).to eq([])
+      expect(exchange.people.to_a).to eq([])
       exchange.add_person(person)
       exchange.add_person(person)
-      expect(exchange.people).to eq([person])
+      expect(exchange.people.to_a).to eq([person])
     end
   end
 
@@ -52,8 +52,13 @@ describe SecretSanta::Exchange do
   end
 
   describe "#to_hash" do
-    it "should be tested" do
-      pending
+    let(:title){ "The exchange title" }
+    let(:time){ Time.now }
+
+    it "should generate a hash from values" do
+      exchange.matched_at = time
+      exchange.title = title
+      expect(exchange.to_hash).to eq(title: title, matched_at: time)
     end
   end
 end

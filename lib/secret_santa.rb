@@ -1,5 +1,6 @@
 require 'active_support/concern'
 require 'active_support/core_ext'
+require 'active_model'
 require 'set'
 
 require 'secret_santa'

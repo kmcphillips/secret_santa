@@ -10,7 +10,6 @@ describe SecretSanta::Person do
 
   describe "#add_exception" do
     it "should add the exception to the collection" do
-      pending
       expect(person.exceptions.length).to be_zero
       person.add_exception double
       person.add_exception "Princess Bubblegum"
@@ -26,7 +25,6 @@ describe SecretSanta::Person do
     let(:recipient){ {name: "Jake T. Dog"} }
 
     it "should serialize the object to a hash" do
-      pending
       expect(person.to_hash).to eq(name: name, email: email, id: id, recipient: recipient.inspect)
     end
   end

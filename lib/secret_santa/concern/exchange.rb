@@ -6,12 +6,11 @@ module SecretSanta::Concern
     end
 
     def people
-      @people ||= Set.new # TODO: Refactor up when activemodel stuff is fixed
-      @people.to_a
+      @people ||= Set.new
     end
 
     def add_person(person)
-      @people << person
+      people << person
     end
     alias_method :<<, :add_person
 
