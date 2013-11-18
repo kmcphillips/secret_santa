@@ -17,6 +17,12 @@ describe SecretSanta::Person do
     end
   end
 
+  describe "#ids" do
+    it "should be tested" do
+      pending
+    end
+  end
+
   describe "#to_hash" do
     let(:person){ SecretSanta::Person.new(name: name, email: email, id: id, recipient: recipient) }
     let(:name){ "Fin T. Human" }

@@ -34,6 +34,17 @@ module SecretSanta::Concern
       }
     end
 
+    def find_person(id)
+      people.each do |person|
+        return person if person.ids.include?(id.to_s)
+      end
+      nil
+    end
+
+    def find_person!(id)
+      find_person(id) || raise(SecretSanta::MatchingError, "Could not find person by '#{ id }'")
+    end
+
     module ClassMethods
     end
   end

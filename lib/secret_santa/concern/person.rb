@@ -22,6 +22,10 @@ module SecretSanta::Concern
       }
     end
 
+    def ids
+      # TODO
+    end
+
     module ClassMethods
     end
   end
