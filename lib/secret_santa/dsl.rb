@@ -9,10 +9,12 @@ class SecretSanta::Dsl
 
     def title(title_string)
       @exchange.title = title_string
+      nil
     end
 
     def add_person(name, opts={})
-      # TODO
+      @exchange << SecretSanta::Person.new(opts.merge(name: name))
+      nil
     end
 
     def person
