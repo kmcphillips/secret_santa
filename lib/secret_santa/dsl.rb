@@ -17,9 +17,35 @@ class SecretSanta::Dsl
       nil
     end
 
-    def person
-      # TODO
+    def person(person_id)
+      if person_id.is_a?(SecretSanta::Person)
+        SecretSanta::Dsl::Person.new(person_id, @exchange)
+      else
+        SecretSanta::Dsl::Person.new(@exchange.find_person!(person_id), @exchange)
+      end
     end
 
+  end
+
+  class Person
+    attr_reader :person
+
+    def initialize(person, exchange)
+      @person = person
+      @exchange = exchange
+    end
+
+    def will_not_give_to(exception)
+      person.add_exception(@exchange.find_person!(exception))
+    end
+
+    def will_not_receive_from(exception)
+      @exchange.find_person!(exception).add_exception(person)
+    end
+
+    def will_not_exchange_with(exception)
+      person.add_exception(@exchange.find_person!(exception))
+      @exchange.find_person!(exception).add_exception(person)
+    end
   end
 end

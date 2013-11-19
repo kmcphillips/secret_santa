@@ -57,6 +57,12 @@ describe SecretSanta::Exchange do
       allow(person).to receive(:ids).and_return([])
       expect(exchange.find_person(123)).to be_nil
     end
+
+    it "should return the person if we are matching by object" do
+      exchange << person
+      allow(person).to receive(:ids).and_return([])
+      expect(exchange.find_person(person)).to eq(person)
+    end
   end
 
   describe "#find_person!" do

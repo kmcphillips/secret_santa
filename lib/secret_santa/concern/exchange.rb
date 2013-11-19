@@ -36,7 +36,7 @@ module SecretSanta::Concern
 
     def find_person(id)
       people.each do |person|
-        return person if person.ids.include?(id.to_s)
+        return person if id == person || person.ids.include?(id.to_s)
       end
       nil
     end
