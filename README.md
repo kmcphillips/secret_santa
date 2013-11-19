@@ -56,6 +56,13 @@ ooo_exchange = SecretSanta.generate do
 end
 ```
 
+Exceptions may be added with the following types:
+
+* will_not_give_to: Person on the left will not draw the name of the person on the right.
+* will_not_receive_from: Person on the left will not have their name drawn by the person on the right.
+* will_not_exchange_with: Neither person will draw one another.
+
+
 ### Define an exchange using the built in models
 
 If you don't like DSLs or want to define your exchange in a more OO way the same above example translates to:
