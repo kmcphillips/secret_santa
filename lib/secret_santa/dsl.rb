@@ -44,8 +44,10 @@ class SecretSanta::Dsl
     end
 
     def will_not_exchange_with(exception)
-      person.add_exception(@exchange.find_person!(exception))
-      @exchange.find_person!(exception).add_exception(person)
+      exception_person = @exchange.find_person!(exception)
+
+      person.add_exception(exception_person)
+      exception_person.add_exception(person)
     end
   end
 end
